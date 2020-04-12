@@ -1,9 +1,9 @@
-version: "3.7"
+\version: "3"
 
 services:
   nginx:
     image: nginx:1.17.4-alpine
-    container_name: nginx
+    container_name: nginx_config
     ports:
       - "8088:80"
     volumes:
@@ -17,7 +17,7 @@ services:
 
   postgres:
     image: postgres:12.0-alpine
-    container_name: postgres
+    container_name: postgres_config
     restart: unless-stopped
     tty: true
     ports:
@@ -40,7 +40,7 @@ services:
 
     restart: unless-stopped
     tty: true
-    container_name: php
+    container_name: php_config
     volumes:
       - ./src:/var/www/html
 
