@@ -13,8 +13,8 @@ RUN apt-get update -qq && \
 RUN docker-php-ext-install mbstring pdo pdo_pgsql
 
 # php.conf php-fpm.conf
-COPY docker/app/conf/php/php.ini /usr/local/etc/php/php.ini
-COPY docker/app/conf/php/docker.conf /usr/local/etc/php-fpm.d/docker.conf
+COPY php/php.ini /usr/local/etc/php/php.ini
+COPY php/docker.conf /usr/local/etc/php-fpm.d/docker.conf
 
 # install Composer
 RUN curl -sS https://getcomposer.org/installer | php && \
