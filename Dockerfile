@@ -3,7 +3,10 @@ FROM php:7.3-fpm
 ENV TZ Asia/Jakarta
 
 # add php,apache-module
-RUN docker-php-ext-install mbstring pdo pdo_pgsql
+
+RUN apt-get update \
+    && apt-get install --yes --no-install-recommends libpq-dev \
+    && docker-php-ext-install pdo_pgsql pdo_mysql
 
 # php.conf php-fpm.conf
 COPY php/php.ini /usr/local/etc/php/php.ini
