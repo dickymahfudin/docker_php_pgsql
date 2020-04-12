@@ -17,17 +17,17 @@ COPY php/php.ini /usr/local/etc/php/php.ini
 COPY php/docker.conf /usr/local/etc/php-fpm.d/docker.conf
 
 # install Composer
-RUN curl -sS https://getcomposer.org/installer | php && \
-    mv composer.phar /usr/local/bin/composer && \
-    chmod +x /usr/local/bin/composer
+# RUN curl -sS https://getcomposer.org/installer | php && \
+#     mv composer.phar /usr/local/bin/composer && \
+#     chmod +x /usr/local/bin/composer
 
-COPY . /app
+# COPY . /app
 
-WORKDIR /app
-RUN /usr/local/bin/composer install
+# WORKDIR /app
+# RUN /usr/local/bin/composer install
 
-# change owner
-RUN chown www-data:www-data -R ./
+# # change owner
+# RUN chown www-data:www-data -R ./
 
 # Expose port 9000 and start php-fpm server
 EXPOSE 9000
