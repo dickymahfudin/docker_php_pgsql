@@ -43,7 +43,8 @@ services:
     container_name: php_config
     volumes:
       - ./src:/var/www/html
-
+    ports:
+      - "9000:9000"
     networks:
       - laravel
 
