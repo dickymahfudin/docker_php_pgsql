@@ -4,7 +4,7 @@
   - `git clone https://github.com/dickymahfudin/docker_php_pgsql.git docker`
   - `mkdir app`
   - `cd docker`
-  - `docker-compose -d up --build`
+  - `docker-compose up -d --build`
  
 ## Installation Laravel
   - `docker-compose exec php bash`
