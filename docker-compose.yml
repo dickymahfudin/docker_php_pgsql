@@ -22,12 +22,12 @@ services:
       - laravel_data:/var/lib/postgresql/data
       - ./db/sql:/docker-entrypoint-initdb.d
     ports:
-       - 5432:5432
+      - 5432:5432
     environment:
       TZ: "Asia/Jakarta"
-      POSTGRES_USER: "sundaya"
-      POSTGRES_PASSWORD: "sundaya2019"
-      POSTGRES_DB: "isnoc"
+      POSTGRES_USER: "docker"
+      POSTGRES_PASSWORD: "docker"
+      POSTGRES_DB: "docker"
     networks:
       - laravel
 
