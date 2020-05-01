@@ -1,4 +1,5 @@
 ## Installation
+  - `sudo su`
   - `mkdir myapp`  
   - `cd myapp`
   - `git clone https://github.com/dickymahfudin/docker_php_pgsql.git docker`
@@ -12,6 +13,7 @@
   - `composer install`
   - `cp .env.example .env`
   - `php artisan key:generate`
+  - `chmod -R 777 storage`
   
 ## DB
   ```sh
