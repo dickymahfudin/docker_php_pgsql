@@ -14,12 +14,13 @@ RUN apt-get update && apt-get install -y \
     vim \
     unzip \
     git \
-    curl
+    curl \
+    cron
 
 # Clear cache
 RUN apt-get clean && rm -rf /var/lib/apt/lists/*
 
-# add php,apache-module
+# add php module
 RUN apt-get update \
     && apt-get install --yes --no-install-recommends libpq-dev \
     && docker-php-ext-install pdo_pgsql
