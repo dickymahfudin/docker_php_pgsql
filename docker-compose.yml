@@ -46,14 +46,6 @@ services:
     networks:
       - laravel
 
-  scheduler:
-    image: laravel-www
-    # container_name: laravel-scheduler
-    depends_on:
-      - app
-    volumes:
-      - ../app:/var/www/html
-
 networks:
   laravel:
 

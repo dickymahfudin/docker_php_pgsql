@@ -14,12 +14,13 @@ RUN apt-get update && apt-get install -y \
     vim \
     unzip \
     git \
-    curl 
+    curl \
+    cron
 
 # Clear cache
 RUN apt-get clean && rm -rf /var/lib/apt/lists/*
 
-# add php module Pgsql
+# add php module
 RUN apt-get update \
     && apt-get install --yes --no-install-recommends libpq-dev \
     && docker-php-ext-install pdo_pgsql
@@ -33,12 +34,6 @@ RUN curl -sS https://getcomposer.org/installer | php -- --install-dir=/usr/local
 COPY php/php.ini /usr/local/etc/php/php.ini
 COPY php/docker.conf /usr/local/etc/php-fpm.d/docker.conf
 
-COPY docker/start.sh /usr/local/bin/start
-
-RUN chown -R www-data:www-data /var/www/html \
-    && chmod u+x /usr/local/bin/start \
-    && a2enmod rewrite
-
 # Expose port 9000 and start php-fpm server
 EXPOSE 9000
-CMD ["php-fpm","/usr/local/bin/start"]
+CMD ["php-fpm"]
