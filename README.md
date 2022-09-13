@@ -10,7 +10,7 @@
 ## Installation Laravel
   - `docker-compose exec php bash`
   - `git clone `https://github.com/dickymahfudin/isnoc.git `.`
-  - `composer install`
+  - `composer install --ignore-platform-reqs`
   - `cp .env.example .env`
   - `php artisan key:generate`
   - `chmod -R 777 storage`
